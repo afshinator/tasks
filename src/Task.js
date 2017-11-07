@@ -1,14 +1,14 @@
 import React, { Component } from "react";
 import * as constants from "./constants";
 
-// A Tasks,
-//  has an editable text area and a trash icon to delete itself from list of tasks
+// A Task,
+//  has an editable text area, and a trash icon to delete itself from list of tasks
 
 const taskCardStyles = {
   background: "#fff",
   borderWidth: "1px",
   width: "100%",
-  height: "200px",                      // Arbitrary default height
+  height: "200px",                      // Height of task card
   boxShadow: "0px 3px 3px #ddd",
   textTransform: "uppercase",
   color: constants.TASK_TEXT_COLOR
@@ -45,7 +45,6 @@ class Task extends Component {
 
   handleChange(e) {
     const newVal = e.target.value;
-    console.log("--handleChange ", newVal);
     this.setState({ editText: newVal }, () => {
       this.props.taskEditHandler(this.props.index, newVal );
     });
