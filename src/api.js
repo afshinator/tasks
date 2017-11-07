@@ -43,11 +43,13 @@ export const setTasks = (url, data, that) => {
   that.setState({ isSaving: true, hasSavedTasks: false, errorSavingTasks: false,
     hasLoadedTasks: false, errorLoadingTasks: false
   }, () => {
-    // console.log('Trying to save ', data);
+    var newData=new FormData();     // lets give this a try
+    newData.append("json", JSON.stringify({tasks:data}));
+
     fetch(url, {
       method: "post",
-      headers : new Headers(),
-      body: JSON.stringify({ tasks: data })
+  //    headers : new Headers(),      // tried it with and without this...to no avail.
+      body: JSON.stringify({ tasks: data })     // tried it with newData too...
     })
       .then(response => {
         if (!response.ok) {
