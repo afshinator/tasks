@@ -11,10 +11,7 @@
 
 
 ---
-Questions / Problems
-
-- My POST request to save the tasks is not working, either in the app or in POSTMAN... :-(
-  The response is a 200 but my data is not being persisted, I would love to find out why.
+Questions
 
 - Should the Save button be enabled after adding new task (which will be empty),  and related question, should you be able to save a list of empty tasks?
 
