@@ -38,10 +38,14 @@ class TopControls extends Component {
   }
 
   render() {
+    const {
+       tasksDirty,
+     } = this.props;
+
     // Change style of save button based on props telling us its enabled or disabled
-    const saveBtnClasses = this.props.tasksDirty ? BTN_STANDARD_CLASSES + " link dim" : BTN_STANDARD_CLASSES;
+    const saveBtnClasses = tasksDirty ? BTN_STANDARD_CLASSES + " link dim" : BTN_STANDARD_CLASSES;
     const addBtnInline = { ...btnInlineStyles, background: constants.ADD_TASK_BTN_COLOR, marginRight: "10px" };
-    const saveBtnColor = this.props.tasksDirty ? { background: constants.GREEN } : { background: constants.GREEN_DIS };
+    const saveBtnColor = tasksDirty ? { background: constants.GREEN } : { background: constants.GREEN_DIS };
     const saveBtnInline = { ...btnInlineStyles, ...saveBtnColor };
 
     return (
