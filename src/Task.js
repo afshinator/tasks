@@ -26,12 +26,9 @@ const trashInlineStyles = {
 };
 
 class Task extends Component {
-  constructor() {
-    super();
-    this.state = {
-      editText: ""          // will hold the task content, a string
-    };
-  }
+  state = {
+    editText: ""          // will hold the task content, a string
+  };
 
   componentDidMount() {
     this.setState({ editText: this.props.content });

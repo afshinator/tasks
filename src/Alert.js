@@ -18,10 +18,7 @@ const MAIN_STYLES = {
 const DEFAULT = "black";
 
 class Alert extends Component {
-  constructor() {
-    super();
-    this.state = { show: true };
-  }
+  state = { show: true };
 
   componentWillReceiveProps(nextProps) {
     const props = this.props;

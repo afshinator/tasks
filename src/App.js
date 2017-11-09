@@ -14,23 +14,19 @@ const inlineStyles = {
 
 
 class App extends Component {
-  constructor() {
-    super();
+  state = {
+    tasks: null,            // Holds loaded and/or modified tasks list, an array
 
-    this.state = {
-      tasks: null,            // Holds loaded and/or modified tasks list, an array
+    isLoading: false,       // True while loading persisted tasks
+    hasLoadedTasks: false,  // True after successfully loading pesisted tasks
+    errorLoadingTasks: false, // True if an error occurred loading tasks
+    isSaving: false,        // True while saving list of tasks
+    hasSavedTasks: false,   // True after successfully saving tasks
+    errorSavingTasks: false,// True if an error occured saving tasks
 
-      isLoading: false,       // True while loading persisted tasks
-      hasLoadedTasks: false,  // True after successfully loading pesisted tasks
-      errorLoadingTasks: false, // True if an error occurred loading tasks
-      isSaving: false,        // True while saving list of tasks
-      hasSavedTasks: false,   // True after successfully saving tasks
-      errorSavingTasks: false,// True if an error occured saving tasks
-
-      dismissAlertToggle: true,     // flip its value to send a message to alert box to hide itself until one of the above booleans changes
-      tasksDirty: false       // True when task list doesnt match persisted tasks
-    };
-  }
+    dismissAlertToggle: true,     // flip its value to send a message to alert box to hide itself until one of the above booleans changes
+    tasksDirty: false       // True when task list doesnt match persisted tasks
+  };
 
   componentDidMount() {
     // Setting the color of the body tag here like this because its the simplest,

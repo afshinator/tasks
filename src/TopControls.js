@@ -15,10 +15,7 @@ const btnInlineStyles = {
 };
 
 class TopControls extends Component {
-  constructor() {
-    super();
-    this.state = { disable: false };
-  }
+  state = { disable: false };
 
   saveClickHandler = (e) => {
     if (!this.props.tasksDirty) return; // Save button is disabled when no new/modified tasksDirty
