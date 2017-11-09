@@ -28,7 +28,6 @@ const trashInlineStyles = {
 class Task extends Component {
   constructor() {
     super();
-    this.handleChange = this.handleChange.bind(this);
     this.state = {
       editText: ""          // will hold the task content, a string
     };
@@ -43,7 +42,7 @@ class Task extends Component {
   }
 
 
-  handleChange(e) {
+  handleChange = (e) => {
     const newVal = e.target.value;
     this.setState({ editText: newVal }, () => {
       this.props.taskEditHandler(this.props.index, newVal );

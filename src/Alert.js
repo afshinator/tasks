@@ -20,12 +20,6 @@ const DEFAULT = "black";
 class Alert extends Component {
   constructor() {
     super();
-
-    this.handleClick = this.handleClick.bind(this);
-    this.getColor = this.getColor.bind(this);
-    this.getMsg = this.getMsg.bind(this);
-    this.dismiss = this.dismiss.bind(this);
-
     this.state = { show: true };
   }
 
@@ -49,15 +43,15 @@ class Alert extends Component {
   }
 
   // Handle user click on the alert --> hide.
-  handleClick(e) {
+  handleClick = (e) => {
     this.dismiss();
   }
 
-  dismiss() {
+  dismiss = () => {
     this.setState({ show: false });
   }
 
-  getColor() {
+  getColor = () => {
     const props = this.props;
     if (props.errorLoadingTasks || props.errorSavingTasks) {
       return { color: constants.ERROR_RED, background: constants.RED_BKGD };
@@ -68,7 +62,7 @@ class Alert extends Component {
     } else return { color: DEFAULT };
   }
 
-  getMsg() {
+  getMsg = () => {
     const props = this.props;
 
     if (props.errorLoadingTasks) {

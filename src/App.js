@@ -16,10 +16,6 @@ const inlineStyles = {
 class App extends Component {
   constructor() {
     super();
-    this.addClickHandler = this.addClickHandler.bind(this);
-    this.saveClickHandler = this.saveClickHandler.bind(this);
-    this.trashClickHandler = this.trashClickHandler.bind(this);
-    this.taskEditHandler = this.taskEditHandler.bind(this);
 
     this.state = {
       tasks: null,            // Holds loaded and/or modified tasks list, an array
@@ -45,7 +41,7 @@ class App extends Component {
   }
 
   // Add a new task to the task lint-staged
-  addClickHandler() {
+  addClickHandler = () => {
     /* For testing:
     const r = Math.random(), r2 = ~~(r*1000)+'', t = `${r2}`, t2 = (r>0.4) ? ' afasfa' : ' ', t3 = t + t2;
     const newArray = [t3].concat( this.state.tasks );
@@ -57,7 +53,7 @@ class App extends Component {
 
 
   // Save the list of tasks by making api call
-  saveClickHandler() {
+  saveClickHandler = () => {
     this.setState({
       tasksDirty: false,      // So the Save button is disabled
     }, () => {
@@ -66,14 +62,14 @@ class App extends Component {
   }
 
   // Delete the task that was clicked on
-  trashClickHandler(i) {
+  trashClickHandler = (i) => {
     const newTasklist = this.state.tasks.slice(); // copy array
     newTasklist.splice(i, 1); // remove item at index i
     this.setState({ tasks: newTasklist, tasksDirty: true });
   }
 
   // Edit the task clicked on
-  taskEditHandler(i, newVal) {
+  taskEditHandler = (i, newVal) => {
     if ( this.state.tasks[i] !== newVal ) {
       const newArray = [].concat( this.state.tasks );
       newArray[i] = newVal;

@@ -17,18 +17,16 @@ const btnInlineStyles = {
 class TopControls extends Component {
   constructor() {
     super();
-    this.saveClickHandler = this.saveClickHandler.bind(this);
-    this.addClickHandler = this.addClickHandler.bind(this);
     this.state = { disable: false };
   }
 
-  saveClickHandler(e) {
+  saveClickHandler = (e) => {
     if (!this.props.tasksDirty) return; // Save button is disabled when no new/modified tasksDirty
     // else
     this.props.saveClickHandler();
   }
 
-  addClickHandler(e) {
+  addClickHandler = (e) => {
     if ( this.state.disable ) return;
     // else
 
