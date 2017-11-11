@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { PureComponent } from "react";
 
 import * as constants from "./constants";
 
@@ -26,7 +26,7 @@ const trashInlineStyles = {
   cursor: "pointer"
 };
 
-class Task extends Component {
+class Task extends PureComponent {
   state = {
     editText: ""          // will hold the task content, a string
   };

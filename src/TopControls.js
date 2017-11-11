@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { PureComponent, Component } from "react";
 import * as constants from "./constants";
 
 // TopControls - The main controls  at the top of the page.
@@ -12,6 +12,13 @@ const ADD_BTN_CLASSES = BTN_STANDARD_CLASSES + " link dim"; // tachyon classes f
 const btnInlineStyles = {
   userSelect: "none", // dont let user select button text when trying to click, its annoying
   cursor: "pointer"
+};
+
+const Title = () => {
+  return ( <div className="fl w-50">
+    <h1 className="mt0 ml0">Tasks</h1>
+  </div>
+  )
 };
 
 class TopControls extends Component {
@@ -50,9 +57,7 @@ class TopControls extends Component {
 
     return (
       <section className="cf" >
-        <div className="fl w-50">
-          <h1 className="mt0 ml0">Tasks</h1>
-        </div>
+        <Title />
         <div className="fl w-50">
           <div className="fr">
             <a className={ADD_BTN_CLASSES} style={addBtnInline} onClick={this.addClickHandler}>

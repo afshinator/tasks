@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { PureComponent } from "react";
 import * as constants from "./constants";
 
 // The alert is the popup indicator that shows the latest status
@@ -17,7 +17,7 @@ const MAIN_STYLES = {
 
 const DEFAULT = "black";
 
-class Alert extends Component {
+class Alert extends PureComponent {
   state = { show: true };
 
   componentWillReceiveProps(nextProps) {
