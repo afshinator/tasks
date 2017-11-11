@@ -1,4 +1,4 @@
-import React, { PureComponent, Component } from "react";
+import React, { PureComponent  } from "react";
 import * as constants from "./constants";
 
 // TopControls - The main controls  at the top of the page.
@@ -21,7 +21,7 @@ const Title = () => {
   )
 };
 
-class TopControls extends Component {
+class TopControls extends PureComponent {
   state = { disable: false };
 
   saveClickHandler = (e) => {
